@@ -1,5 +1,7 @@
 # vue-sbchart
 
+A simple baseline charting component for Vue 3.
+
 ## Install
 
 ```
