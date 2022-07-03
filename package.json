@@ -13,7 +13,7 @@
     "build-library": "vue-cli-service build --target lib --name SimpleBaselineChart src/install.js",
     "lint": "vue-cli-service lint"
   },
-  "main": ".dist/SimpleBaselineChart.common.js",
+  "main": ".dist/SimpleBaselineChart.umd.min.js",
   "files": [
     "dist/*"
   ],
