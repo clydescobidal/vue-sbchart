@@ -1,7 +1,7 @@
 {
   "name": "vue-sbchart",
   "description": "A simple baseline charting component for Vue 3",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "author": {
     "name": "Clyde Escobidal",
@@ -13,8 +13,10 @@
     "build-library": "vue-cli-service build --target lib --name SimpleBaselineChart src/install.js",
     "lint": "vue-cli-service lint"
   },
-  "main" : ".dist/SimpleBaselineChart.common.js",
-  "files": ["dist/*"],
+  "main": ".dist/SimpleBaselineChart.common.js",
+  "files": [
+    "dist/*"
+  ],
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
@@ -51,5 +53,9 @@
   "repository": "https://github.com/cleidoscope/vue-sbchart",
   "bugs": "https://github.com/cleidoscope/vue-sbchart/issues",
   "license": "MIT",
-  "keywords": ["baseline chart", "chart", "baseline"]
+  "keywords": [
+    "baseline chart",
+    "chart",
+    "baseline"
+  ]
 }
