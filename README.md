@@ -1,7 +1,6 @@
 # vue-sbchart
 
 ![build](https://github.com/cleidoscope/vue-sbchart/actions/workflows/build.yml/badge.svg)
-
 A simple baseline charting component for Vue 3.
 
 ## Install
