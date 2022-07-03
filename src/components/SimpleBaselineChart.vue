@@ -13,11 +13,19 @@ export default {
 	props: {
 		series: {
 			type: Array,
-			default: () => []
+			default() {
+				return [];
+			}
 		},
 		baseValue: {
 			type: Number,
 			default: 0
+		},
+		options: {
+			type: Object,
+			default() {
+				return {};
+			}
 		}
 	},
 
@@ -28,6 +36,15 @@ export default {
 				return a.timestamp - b.timestamp;
 			});
 		});
+
+		const hexToRgb = hex => {
+			let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+			return result ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) } : null;
+		};
+
+		const upColor = hexToRgb(props.options.upColor) || { r: 0, g: 128, b: 0 };
+		const downColor = hexToRgb(props.options.downColor) || { r: 255, g: 0, b: 0 };
+		const lineWidth = props.options.lineWidth || 1;
 
 		const simpleBaselineChart = ref(null);
 
@@ -80,14 +97,7 @@ export default {
 
 			drawLines(ctx, sortedSeries.value, highest, lowest, canvasHeight, padding, gap.value, baseValuePosition, canvas, 'up', true);
 			finalCtx.drawImage(canvas, 0, 0);
-			if (props.dashes && baseValuePosition > 0 && baseValuePosition <= canvasHeight) {
-				finalCtx.moveTo(0, canvas.height);
-				finalCtx.lineTo(canvas.width, canvas.height);
-				finalCtx.setLineDash([5, 3]);
-				finalCtx.strokeStyle = 'rgba(255,255,255,0.35)';
-				finalCtx.stroke();
-				finalCtx.setLineDash([0, 0]);
-			}
+
 			const dataUrl = finalCanvas.toDataURL('image/png');
 			image.value = dataUrl;
 		};
@@ -95,9 +105,9 @@ export default {
 		const drawLines = (ctx, series, highest, lowest, canvasHeight, padding, gap, baseValuePosition, canvas, direction, getPoints) => {
 			ctx.beginPath();
 			let index = 0;
-			let strokeStyle = 'green';
+			let strokeStyle = `rgb(${upColor.r}, ${upColor.g}, ${upColor.b})`;
 			if (direction == 'down') {
-				strokeStyle = 'red';
+				strokeStyle = `rgb(${downColor.r}, ${downColor.g}, ${downColor.b})`;
 			}
 
 			series.forEach((serie, index) => {
@@ -121,6 +131,7 @@ export default {
 				}
 			});
 			ctx.strokeStyle = strokeStyle;
+			ctx.lineWidth = lineWidth;
 			ctx.stroke();
 			// Gradient
 			let gradient = null;
@@ -132,8 +143,8 @@ export default {
 				} else if (colorStop < 0) {
 					colorStop = 0;
 				}
-				gradient.addColorStop(0, 'rgba(50, 168, 82, 0.5)');
-				gradient.addColorStop(colorStop, 'rgba(50, 168, 82, 0)');
+				gradient.addColorStop(0, `rgba(${upColor.r}, ${upColor.g}, ${upColor.b}, 0.5)`);
+				gradient.addColorStop(colorStop, `rgba(${upColor.r}, ${upColor.g}, ${upColor.b}, 0)`);
 
 				ctx.lineTo(gap * (series.length - 1), canvasHeight - baseValuePosition); // bottom-right
 				ctx.lineTo(gap * (index - series.length), canvasHeight - baseValuePosition); // bottom-left
@@ -145,8 +156,8 @@ export default {
 					colorStop = 0;
 				}
 				gradient = ctx.createLinearGradient(0, canvasHeight, 0, 0);
-				gradient.addColorStop(0, 'rgba(168, 50, 50, 0.5)');
-				gradient.addColorStop(colorStop, 'rgba(168, 50, 50, 0');
+				gradient.addColorStop(0, `rgba(${downColor.r}, ${downColor.g}, ${downColor.b}, 0.5)`);
+				gradient.addColorStop(colorStop, `rgba(${downColor.r}, ${downColor.g}, ${downColor.b}, 0)`);
 
 				ctx.lineTo(canvas.width - padding, gap); // top-right
 				ctx.lineTo(padding, gap); // top-left
