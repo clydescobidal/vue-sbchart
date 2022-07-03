@@ -24,6 +24,7 @@ npm install vue-sbchart
 import SimpleBaselineChart from 'vue-sbchart';
 export default {
 	components: { SimpleBaselineChart },
+
 	setup(props) {
 		const series = [
 			{ timestamp: 1656818225, value: 12 },
