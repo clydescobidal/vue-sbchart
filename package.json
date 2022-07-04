@@ -13,9 +13,9 @@
     "build-library": "vue-cli-service build --target lib --name SimpleBaselineChart src/install.js",
     "lint": "vue-cli-service lint"
   },
-  "main": ".dist/SimpleBaselineChart.umd.min.js",
+  "main": "src/components/SimpleBaselineChart.vue",
   "files": [
-    "dist/*"
+    "src/*"
   ],
   "dependencies": {
     "core-js": "^3.8.3",
