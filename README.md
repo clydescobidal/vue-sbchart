@@ -1,4 +1,3 @@
-@@ -1,65 +0,0 @@
 # vue-sbchart
 
 ![build](https://github.com/cleidoscope/vue-sbchart/actions/workflows/build.yml/badge.svg) ![License](https://img.shields.io/npm/l/vue-sbchart.svg)
