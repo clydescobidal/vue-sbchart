@@ -1,7 +1,7 @@
 {
   "name": "vue-sbchart",
   "description": "A simple baseline charting component for Vue 3",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "private": false,
   "author": {
     "name": "Clyde Escobidal",
@@ -52,5 +52,7 @@
   "engines": {
     "node": ">=12"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/cleidoscope/vue-sbchart",
+  "bugs": "https://github.com/cleidoscope/vue-sbchart/issues"
 }
