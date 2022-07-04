@@ -4,6 +4,9 @@
 
 A simple baseline charting component for Vue 3.
 
+## Demo
+[https://cleidoscope.github.io/vue-sbchart/](https://cleidoscope.github.io/vue-sbchart/)
+
 ## Install
 
 ```
