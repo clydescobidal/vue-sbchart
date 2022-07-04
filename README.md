@@ -1,7 +1,7 @@
 @@ -1,65 +0,0 @@
 # vue-sbchart
 
-![build](https://github.com/cleidoscope/vue-sbchart/actions/workflows/build.yml/badge.svg) ![GitHub file size in bytes](https://img.shields.io/github/size/cleidoscope/vue-sbchart/dist/SimpleBaselineChart.umd.min.js) ![License](https://img.shields.io/npm/l/vue-sbchart.svg)
+![build](https://github.com/cleidoscope/vue-sbchart/actions/workflows/build.yml/badge.svg) ![License](https://img.shields.io/npm/l/vue-sbchart.svg)
 
 A simple baseline charting component for Vue 3.
 
