@@ -4,7 +4,7 @@
 
 A simple baseline charting component for Vue 3.
 
-![Alt text](https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/screenshot/vue-sbchart.png "vue-sbchart")
+![Alt text](https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/screenshot/vue-sbchart-preview.png "vue-sbchart")
 
 
 ## Install
