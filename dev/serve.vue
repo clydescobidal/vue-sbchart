@@ -1,5 +1,6 @@
 <script setup>
 import VueSbchart from '@/vue-sbchart.vue';
+
 const series = [
 	{ timestamp: 1656818225, value: 12 },
 	{ timestamp: 1656818226, value: 13 },
@@ -12,8 +13,8 @@ const series = [
 const baseValue = 13;
 const options = {
 	upColor: '#37eb34',
-downColor: '#eb3434',
-lineWidth: 1
+	downColor: '#eb3434',
+	lineWidth: 1
 };
 </script>
 
