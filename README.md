@@ -1,11 +1,11 @@
 # vue-sbchart
 
-![build](https://github.com/cleidoscope/vue-sbchart/actions/workflows/build.yml/badge.svg) ![License](https://img.shields.io/npm/l/vue-sbchart) ![npm](https://img.shields.io/npm/dm/vue-sbchart)
+![build](https://github.com/clydescobidal/vue-sbchart/actions/workflows/build.yml/badge.svg) ![License](https://img.shields.io/npm/l/vue-sbchart) ![npm](https://img.shields.io/npm/dm/vue-sbchart)
 
 A simple baseline charting component for Vue 3.
 
 ## Demo
-[https://cleidoscope.github.io/vue-sbchart/](https://cleidoscope.github.io/vue-sbchart/)
+[https://clydescobidal.github.io/vue-sbchart/](https://clydescobidal.github.io/vue-sbchart/)
 
 ## Install
 
