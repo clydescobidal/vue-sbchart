@@ -26,7 +26,8 @@ npm install vue-sbchart
 ```
 
 ```javascript
-import VueSbchart from 'vue-sbchart';
+import { VueSBChart } from 'vue-sbchart';
+import 'vue-sbchart/dist/style.css';
 
 const series = [
     { timestamp: 1656818225, value: 12 },
@@ -48,9 +49,11 @@ const options = {
 ### Props
 | Property      | Type |  Description |
 | ----------- |  ---- | ---
-| series      | Array       | An array of objects containing **value** and **timestamp** properties
+| series      | Array       | An array of objects containing **value** and **UNIX timestamp** properties
 | baseValue   | float       | The base value used to calculate high and low positions
 | options   | Object        | An object with customization properties (see below)
+| interactive   | Boolean       | Show pop-up on hover (default: **true**) 
+| gridLines   | Boolean       | Enable grid lines background (default: **true**) 
 
 ### Options
 You can customize the chart by passing an object in the component's **options** prop (see example above) with these properties:

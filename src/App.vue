@@ -1,8 +1,8 @@
-<script setup>
-import VueSbchart from '@/vue-sbchart.vue';
+<script setup lang="ts">
+import VueSBChart from '../lib/VueSBChart.vue';
 
 const series = [
-	{ timestamp: 1656818225, value: 12 },
+	{ timestamp: 1656818225, value: 11 },
 	{ timestamp: 1656818226, value: 13 },
 	{ timestamp: 1656818227, value: 14 },
 	{ timestamp: 1656818228, value: 15 },
@@ -12,7 +12,7 @@ const series = [
 	{ timestamp: 1656818232, value: 16 },
 	{ timestamp: 1656818233, value: 13.6 },
 	{ timestamp: 1656818234, value: 12.6 },
-	{ timestamp: 1656818235, value: 14 },
+	{ timestamp: 1656818235, value: 14.958 },
 	{ timestamp: 1656818236, value: 15 },
 	{ timestamp: 1656818237, value: 16.5 },
 	{ timestamp: 1656818238, value: 13.5 },
@@ -32,7 +32,7 @@ const options = {
 <template>
 	<div id="app">
 		<div style="width: 1000px; height: 250px">
-			<vue-sbchart :series="series" :baseValue="baseValue" :options="options" interactive />
+			<VueSBChart :series="series" :baseValue="baseValue"  />
 		</div>
 	</div>
 </template>
