@@ -26,7 +26,6 @@ npm install vue-sbchart
 ```
 
 ```javascript
-<script setup>
 import VueSbchart from 'vue-sbchart';
 const series = [
     { timestamp: 1656818225, value: 12 },
@@ -43,7 +42,6 @@ const options = {
     downColor: '#eb3434',
     lineWidth: 1
 };
-</script>
 ```
 
 ### Props
