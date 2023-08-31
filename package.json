@@ -53,6 +53,6 @@
     "node": ">=12"
   },
   "license": "MIT",
-  "repository": "https://github.com/cleidoscope/vue-sbchart",
-  "bugs": "https://github.com/cleidoscope/vue-sbchart/issues"
+  "repository": "https://github.com/clydescobidal/vue-sbchart.git",
+  "bugs": "https://github.com/clydescobidal/vue-sbchart/issues"
 }
