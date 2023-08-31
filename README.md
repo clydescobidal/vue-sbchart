@@ -20,7 +20,7 @@ npm install vue-sbchart
 ```html
 <template>
     <div style="width: 500px; height: 230px">
-      <VueSbchart :series="series" :baseValue="baseValue" :options="options" />
+        <VueSbchart :series="series" :baseValue="baseValue" :options="options" />
     </div>
 </template>
 ```
