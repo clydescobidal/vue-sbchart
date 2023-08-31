@@ -27,6 +27,7 @@ npm install vue-sbchart
 
 ```javascript
 import VueSbchart from 'vue-sbchart';
+
 const series = [
     { timestamp: 1656818225, value: 12 },
     { timestamp: 1656818226, value: 13 },
