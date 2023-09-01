@@ -1,7 +1,7 @@
 {
   "name": "vue-sbchart",
   "description": "A simple and lightweight baseline charting component for Vue 3",
-  "version": "1.0.53",
+  "version": "1.0.6",
   "private": false,
   "author": {
     "name": "Clyde Escobidal",
