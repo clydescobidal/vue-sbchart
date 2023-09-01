@@ -1,6 +1,6 @@
 <template>
 	<div ref="simpleBaselineChart" class="simple-baseline-chart">
-		<div v-if="props.gridLines" class="simple-baseline-grid" :style="{backgroundSize: `${gap/2}px ${gap/2}px`}">
+		<div v-if="props.gridLines && simpleBaselineChart" class="simple-baseline-grid" :style="{backgroundSize: `${gridBackgroundSize}px ${gridBackgroundSize}px`}">
 		</div>
 		
 		<template v-if="image">
@@ -8,11 +8,19 @@
 		</template>
 
 		<div v-if="props.interactive" class="simple-baseline-series">
-			<div v-for="(point, index) in points" :key="index" class="simple-baseline-serie" :style="{ width: `${gap/2}px`, left: `${point.x}px`}">
-				<div class="serie-wrapper" :style="{top: `${point.y}px` }">
+			<div v-for="(point, index) in points" :key="index" class="simple-baseline-serie" 
+				:class="{
+					'simple-baseline-serie-start': index == 0,
+					'simple-baseline-serie-end': index == points.length - 1,
+					}"
+				:style="{
+					left: `${(gridBackgroundSize * index) - (index == 0 ? 0 : gridBackgroundSize / 2) }px`, 
+					width: `${gridBackgroundSize / (index == 0 || index == points.length - 1 ? 2 : 1)}px` 
+				}">
+				<div class="simple-baseline-serie-wrapper" :style="{top: `${point.y}px` }">
 					<div>
 						<div>{{ tsToDate(point.serie.timestamp) }}</div>
-						<div class="serie-value">{{ point.serie.value }}</div>
+						<div class="simple-baseline-serie-value">{{ point.serie.value }}</div>
 						<span class="arrow-down"></span>
 					</div>
 					<span :style="{backgroundColor: `${point.serie.value > props.baseValue ? rgbToHex(upColor) : rgbToHex(downColor)}`}"></span>
@@ -25,6 +33,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, PropType } from 'vue';
 import { TSerie, TOption, TPoint, TRgb } from './types';
+
 
 const componentToHex = (c: number)  => {
   var hex = c.toString(16);
@@ -86,22 +95,24 @@ const simpleBaselineChart = ref<HTMLDivElement>();
 const points = ref<TPoint[]>([]);
 const gap = ref(0);
 const image = ref();
+
+const gridBackgroundSize = computed(() => simpleBaselineChart.value?.clientWidth!/(props.series.length - 1))
+
 const draw = () => {
 	if (sortedSeries.value.length == 0) return;
 	let canvas = document.createElement('canvas');
 	let parent = simpleBaselineChart.value;
-	canvas.width = parent!.offsetWidth * 2;
-	canvas.height = parent!.offsetHeight * 2;
+	canvas.width = parent!.clientWidth * 2;
+	canvas.height = parent!.clientHeight * 2;
 	let ctx = canvas.getContext('2d');
 	ctx!.lineWidth = 1;
 	let baseValue = props.baseValue;
 	let series = sortedSeries.value.map(x => x.value);
 
-	let padding = 1;
+	let padding = 0;
 	let seriesLength = series.length;
-	let offsetRight = padding / seriesLength;
 
-	gap.value = canvas.width / (seriesLength - 1) - offsetRight;
+	gap.value = canvas.width / (seriesLength - 1);
 	let canvasHeight = canvas.height - padding;
 	let highest = Math.max.apply(Math, series);
 	let lowest = Math.min.apply(Math, series);
@@ -152,9 +163,10 @@ const drawLines = (ctx: CanvasRenderingContext2D, series: TSerie[], highest: num
 
 		if (index == 0) {
 			x = padding;
-		} else {
+		} else { 
 			x = gap * index;
 		}
+		
 		ctx.lineTo(x, y);
 		if (index > -1 && getPoints && props.interactive) {
 			points.value.push({
@@ -164,6 +176,7 @@ const drawLines = (ctx: CanvasRenderingContext2D, series: TSerie[], highest: num
 			});
 		}
 	});
+
 	ctx.strokeStyle = strokeStyle;
 	ctx.lineWidth = lineWidth;
 	ctx.stroke();
@@ -214,6 +227,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.simple-baseline-chart-wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
 .simple-baseline-chart {
 	width: 100%;
 	height: 100%;
@@ -241,19 +261,19 @@ onMounted(() => {
 }
 .simple-baseline-serie{
 	position: absolute;
-	height: 100%;
 	top: 0;
+	height: 100%;
 }
 .simple-baseline-serie:hover:after,
-.simple-baseline-serie:hover .serie-wrapper{
+.simple-baseline-serie:hover .simple-baseline-serie-wrapper{
 	opacity: 100%;
 }
-.serie-wrapper{
+.simple-baseline-serie-wrapper{
 	position: absolute;
 	font-size: 10px;
 	line-height: 14px;
 	font-weight: normal;
-	left: -4px;
+	left: 50%;
 	height: 8px;
 	width: 8px;
 	z-index: 10;
@@ -263,8 +283,19 @@ onMounted(() => {
 	border-radius: 50%;
 	pointer-events: none;
 	background-color: white;
+	transform: translateX(-50%);
 }
-.serie-wrapper > div {
+.simple-baseline-serie-start .simple-baseline-serie-wrapper {
+	transform: none;
+	left: -4px;
+	right: auto;
+}
+.simple-baseline-serie-end .simple-baseline-serie-wrapper {
+	transform: none;
+	right: -4px;
+	left: auto;
+}
+.simple-baseline-serie-wrapper > div {
 	position: absolute;
 	bottom: 15px;
 	left: 50%;
@@ -279,7 +310,7 @@ onMounted(() => {
 	white-space: nowrap;
 
 }
-.serie-wrapper > span {
+.simple-baseline-serie-wrapper > span {
 	width: 5px;
 	height: 5px;
 	border-radius: 50%;
@@ -295,11 +326,22 @@ onMounted(() => {
 	width: 1px;
 	height: 100%;
 	top: 0;
-	left: -1.5px;
+	left: 50%;
 	border-right: dashed 1px #aaa;
 	opacity: 0;
+	transform: translateX(-50%);
 }
-.serie-value{
+.simple-baseline-serie.simple-baseline-serie-start:after{
+	transform: none;
+	left: -0.5px;
+	right: auto;
+}
+.simple-baseline-serie.simple-baseline-serie-end:after{
+	transform: none;
+	right: -0.5px;
+	left: auto;
+}
+.simple-baseline-serie-value{
 	font-weight: bold;
 	font-size: 11px;
 }
