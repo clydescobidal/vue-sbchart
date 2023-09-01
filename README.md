@@ -1,13 +1,22 @@
-# vue-sbchart
+<p align="center">
+    <img src="https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/images/logo.png" alt="Vue SBChart"><br/>
+    Simple baseline chart for Vue 3
+</p>
 
-![build](https://github.com/clydescobidal/vue-sbchart/actions/workflows/build.yml/badge.svg) ![License](https://img.shields.io/npm/l/vue-sbchart) ![npm](https://img.shields.io/npm/dm/vue-sbchart)
+<p align="center">
+    <a href="https://www.npmjs.com/package/vue-sbchart"><img src="https://badge.fury.io/js/vue-sbchart.svg" alt="NPM Package"></a>
+    <img src="https://github.com/clydescobidal/vue-sbchart/actions/workflows/build.yml/badge.svg" alt="Build">
+    <img src="https://img.shields.io/npm/l/vue-sbchart" alt="License">
+    <img src="https://img.shields.io/npm/dm/vue-sbchart" alt="Monthly downloads">
+    <img src="https://img.shields.io/npm/dt/vue-sbchart" alt="Total downloads">
+    <img src="https://packagequality.com/shield/vue-sbchart.svg" alt="Quality">
+</p>
 
-A simple baseline charting component for Vue 3.
 
-![Alt text](https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/screenshot/vue-sbchart-preview.png "vue-sbchart")
+![Alt text](https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/images/vue-sbchart-preview.png "vue-sbchart")
 
 
-## Install
+## Installation
 
 ```
 npm install vue-sbchart
@@ -20,7 +29,7 @@ npm install vue-sbchart
 ```html
 <template>
     <div style="width: 500px; height: 230px">
-        <VueSBChart :series="series" :baseValue="baseValue" :options="options" />
+        <VueSbchart :series="series" :baseValue="baseValue" :options="options" />
     </div>
 </template>
 ```
@@ -62,3 +71,7 @@ You can customize the chart by passing an object in the component's **options** 
 | upColor      | string (hex)       | #008000 | Gradient and line color when value is higher than the base value
 | downColor   | string (hex)        | #ff0000 | Gradient and line color when value is less than the base value
 | lineWidth   | Number        | 1  | The line size of stroke
+
+
+### License
+MIT © [Clyde Escobidal](https://clydescobidal.dev)
