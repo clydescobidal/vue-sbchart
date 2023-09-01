@@ -1,5 +1,5 @@
 import { defineComponent as J, computed as j, ref as L, onMounted as K, openBlock as _, createElementBlock as $, normalizeStyle as M, createCommentVNode as z, Fragment as Q, renderList as X, normalizeClass as Z, createElementVNode as y, toDisplayString as F, unref as G, pushScopeId as P, popScopeId as H } from "vue";
-const x = (h) => (P("data-v-01f38a9b"), h = h(), H(), h), ee = ["src"], te = {
+const x = (h) => (P("data-v-94ca05f0"), h = h(), H(), h), ee = ["src"], te = {
   key: 2,
   class: "simple-baseline-series"
 }, le = { class: "simple-baseline-serie-value" }, re = /* @__PURE__ */ x(() => /* @__PURE__ */ y("span", { class: "arrow-down" }, null, -1)), oe = /* @__PURE__ */ J({
@@ -137,7 +137,7 @@ const ae = (h, s) => {
   for (const [C, W] of s)
     f[C] = W;
   return f;
-}, ne = /* @__PURE__ */ ae(oe, [["__scopeId", "data-v-01f38a9b"]]);
+}, ne = /* @__PURE__ */ ae(oe, [["__scopeId", "data-v-94ca05f0"]]);
 export {
   ne as VueSBChart
 };
