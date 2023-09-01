@@ -227,13 +227,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.simple-baseline-chart-wrapper {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	display: flex;
-	justify-content: center;
-}
 .simple-baseline-chart {
 	width: 100%;
 	height: 100%;
