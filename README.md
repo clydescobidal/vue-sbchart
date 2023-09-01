@@ -1,10 +1,10 @@
 <p align="center">
-    <img height="250" src="https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/images/logo.png" alt="Vue SBChart"><br/>
-    Simple baseline chart for Vue 3
+    <img height="250" src="https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/images/vue-sbchart.png" alt="Vue SBChart"><br/>
+    A simple and lightweight baseline charting package for Vue 3
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/vue-sbchart"><img src="https://badge.fury.io/js/vue-sbchart.svg?v=1.0.5" alt="NPM Package"></a>
+    <a href="https://www.npmjs.com/package/vue-sbchart"><img src="https://badge.fury.io/js/vue-sbchart.svg?v=1.0.53" alt="NPM Package"></a>
     <img src="https://github.com/clydescobidal/vue-sbchart/actions/workflows/build.yml/badge.svg" alt="Build">
     <img src="https://img.shields.io/npm/l/vue-sbchart" alt="License">
     <img src="https://img.shields.io/npm/dm/vue-sbchart" alt="Monthly downloads">
