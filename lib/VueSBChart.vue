@@ -351,17 +351,18 @@ img {
 }
 .arrow-down {
 	position: absolute;
-	bottom: -4px;
+	bottom: -3px;
 	left: 50%;
+	z-index: -1;
 }
 .arrow-down:before{
 	content: '';
-	width: 5px; 
-	height: 5px; 
-	border: solid 1px #ddd;
+	width: 6px; 
+	height: 6px; 
 	background-color: white;
 	transform: translateX(-50%) rotate(45deg);
 	display: block;
+	box-shadow: 0 0 2px #999;
 }
 .arrow-down:after{
 	content: '';
@@ -370,7 +371,7 @@ img {
 	background-color: white;
 	width: 12px;
 	height: 5px;
-	top: 0.5px;
+	top: 0px;
 	left: 0;
 	transform: translate(-50%, -50%);
 }
