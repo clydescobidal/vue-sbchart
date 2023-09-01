@@ -32,7 +32,7 @@ const options = {
 <template>
 	<div id="app">
 		<div style="width: 1000px; height: 250px">
-			<VueSBChart :series="series" :baseValue="baseValue"  />
+			<VueSBChart :series="series" :baseValue="baseValue" :options="options"  />
 		</div>
 	</div>
 </template>
