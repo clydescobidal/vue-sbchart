@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/images/logo.png" alt="Vue SBChart"><br/>
+    <img height="250" src="https://raw.githubusercontent.com/clydescobidal/vue-sbchart/main/images/logo.png" alt="Vue SBChart"><br/>
     Simple baseline chart for Vue 3
 </p>
 
