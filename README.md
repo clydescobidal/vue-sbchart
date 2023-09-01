@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/vue-sbchart"><img src="https://badge.fury.io/js/vue-sbchart.svg?v=1.0.53" alt="NPM Package"></a>
+    <a href="https://www.npmjs.com/package/vue-sbchart"><img src="https://badge.fury.io/js/vue-sbchart.svg?v=1.0.6" alt="NPM Package"></a>
     <img src="https://github.com/clydescobidal/vue-sbchart/actions/workflows/build.yml/badge.svg" alt="Build">
     <img src="https://img.shields.io/npm/l/vue-sbchart" alt="License">
     <img src="https://img.shields.io/npm/dm/vue-sbchart" alt="Monthly downloads">
