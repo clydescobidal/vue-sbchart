@@ -170,7 +170,7 @@ const drawLines = (ctx: CanvasRenderingContext2D, series: TSerie[], highest: num
 		ctx.lineTo(x, y);
 		if (index > -1 && getPoints && props.interactive) {
 			points.value.push({
-				y: (y / 2) - 5,
+				y: (y / 2) - 4,
 				x: x / 2,
 				serie
 			});
