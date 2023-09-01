@@ -1,5 +1,5 @@
 import { defineComponent as J, computed as j, ref as L, onMounted as K, openBlock as _, createElementBlock as $, normalizeStyle as M, createCommentVNode as z, Fragment as Q, renderList as X, normalizeClass as Z, createElementVNode as y, toDisplayString as F, unref as G, pushScopeId as P, popScopeId as H } from "vue";
-const x = (h) => (P("data-v-14e1e79c"), h = h(), H(), h), ee = ["src"], te = {
+const x = (h) => (P("data-v-f64fb241"), h = h(), H(), h), ee = ["src"], te = {
   key: 2,
   class: "simple-baseline-series"
 }, le = { class: "simple-baseline-serie-value" }, re = /* @__PURE__ */ x(() => /* @__PURE__ */ y("span", { class: "arrow-down" }, null, -1)), oe = /* @__PURE__ */ J({
@@ -35,10 +35,10 @@ const x = (h) => (P("data-v-14e1e79c"), h = h(), H(), h), ee = ["src"], te = {
     }
   },
   setup(h) {
-    const s = h, f = (e) => {
+    const s = h, v = (e) => {
       var t = e.toString(16);
       return t.length == 1 ? "0" + t : t;
-    }, C = (e) => "#" + f(e.r) + f(e.g) + f(e.b), W = (e) => {
+    }, C = (e) => "#" + v(e.r) + v(e.g) + v(e.b), W = (e) => {
       const t = new Date(e * 1e3);
       return `${t.getDate()}/${t.getMonth()}/${t.getFullYear()} ${t.getHours()}:${t.getMinutes()}`;
     }, k = j(() => s.series.sort((t, l) => t.timestamp - l.timestamp)), O = (e) => {
@@ -58,23 +58,23 @@ const x = (h) => (P("data-v-14e1e79c"), h = h(), H(), h), ee = ["src"], te = {
       V.value = e.width / (m - 1);
       let i = e.height - d, b = Math.max.apply(Math, a), c = Math.min.apply(Math, a), E = (n - c) / (b - c), g = (i - d) * E;
       g < 0 && (g = 0);
-      let v = document.createElement("canvas");
-      v.width = e.width, v.height = e.height;
-      let o = v.getContext("2d");
+      let f = document.createElement("canvas");
+      f.width = e.width, f.height = e.height;
+      let o = f.getContext("2d");
       R(l, k.value, b, c, i, d, V.value, g, e, "down"), o == null || o.drawImage(e, 0, 0), l == null || l.clearRect(0, 0, e.width, e.height), l == null || l.beginPath(), g > i ? e.height = 1 : e.height = i - g, e.height <= 0 && (e.height = 1), R(l, k.value, b, c, i, d, V.value, g, e, "up", !0), o == null || o.drawImage(e, 0, 0);
-      const r = v.toDataURL("image/png");
+      const r = f.toDataURL("image/png");
       D.value = r;
     }, R = (e, t, l, n, a, d, m, i, b, c, E = !1) => {
       e.beginPath();
-      let g = 0, v = `rgb(${u.r}, ${u.g}, ${u.b})`;
-      c == "down" && (v = `rgb(${p.r}, ${p.g}, ${p.b})`), t.forEach((r, w) => {
+      let g = 0, f = `rgb(${u.r}, ${u.g}, ${u.b})`;
+      c == "down" && (f = `rgb(${p.r}, ${p.g}, ${p.b})`), t.forEach((r, w) => {
         let Y = (r.value - n) / (l - n), q = (a - d) * Y, T = 0, N = a - q;
         w == 0 ? T = d : T = m * w, e.lineTo(T, N), w > -1 && E && s.interactive && I.value.push({
           y: N / 2 - 5,
           x: T / 2,
           serie: r
         });
-      }), e.strokeStyle = v, e.lineWidth = U, e.stroke();
+      }), e.strokeStyle = f, e.lineWidth = U, e.stroke();
       let o;
       if (c == "up") {
         o = e.createLinearGradient(0, 0, 0, a);
@@ -133,11 +133,11 @@ const x = (h) => (P("data-v-14e1e79c"), h = h(), H(), h), ee = ["src"], te = {
   }
 });
 const ae = (h, s) => {
-  const f = h.__vccOpts || h;
+  const v = h.__vccOpts || h;
   for (const [C, W] of s)
-    f[C] = W;
-  return f;
-}, ne = /* @__PURE__ */ ae(oe, [["__scopeId", "data-v-14e1e79c"]]);
+    v[C] = W;
+  return v;
+}, ne = /* @__PURE__ */ ae(oe, [["__scopeId", "data-v-f64fb241"]]);
 export {
   ne as VueSBChart
 };
