@@ -82,7 +82,7 @@ const hexToRgb = (hex:string) => {
 const upColor = hexToRgb(props.options.upColor) || { r: 0, g: 128, b: 0 };
 const downColor = hexToRgb(props.options.downColor) || { r: 255, g: 0, b: 0 };
 const lineWidth = props.options.lineWidth || 1;
-const simpleBaselineChart = ref<HTMLDivElement>(	);
+const simpleBaselineChart = ref<HTMLDivElement>();
 const points = ref<TPoint[]>([]);
 const gap = ref(0);
 const image = ref();
