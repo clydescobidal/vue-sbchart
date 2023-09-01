@@ -13,6 +13,7 @@
 					<div>
 						<div>{{ tsToDate(point.serie.timestamp) }}</div>
 						<div class="serie-value">{{ point.serie.value }}</div>
+						<span class="arrow-down"></span>
 					</div>
 					<span :style="{backgroundColor: `${point.serie.value > props.baseValue ? rgbToHex(upColor) : rgbToHex(downColor)}`}"></span>
 				</div>
@@ -265,7 +266,7 @@ onMounted(() => {
 }
 .serie-wrapper > div {
 	position: absolute;
-	bottom: 10px;
+	bottom: 15px;
 	left: 50%;
 	width: auto;
 	height: auto;
@@ -305,5 +306,30 @@ onMounted(() => {
 img {
 	width: 100%;
 	height: 100%;
+}
+.arrow-down {
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+}
+.arrow-down:before{
+	content: '';
+	width: 5px; 
+	height: 5px; 
+	border: solid 1px #ddd;
+	background-color: white;
+	transform: translateX(-50%) rotate(45deg);
+	display: block;
+}
+.arrow-down:after{
+	content: '';
+	display: block;
+	position: absolute;
+	background-color: white;
+	width: 12px;
+	height: 5px;
+	top: 0.5px;
+	left: 0;
+	transform: translate(-50%, -50%);
 }
 </style>
