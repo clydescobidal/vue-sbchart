@@ -9,7 +9,6 @@
     <img src="https://img.shields.io/npm/l/vue-sbchart" alt="License">
     <img src="https://img.shields.io/npm/dm/vue-sbchart" alt="Monthly downloads">
     <img src="https://img.shields.io/npm/dt/vue-sbchart" alt="Total downloads">
-    <img src="https://packagequality.com/shield/vue-sbchart.svg" alt="Quality">
 </p>
 
 
